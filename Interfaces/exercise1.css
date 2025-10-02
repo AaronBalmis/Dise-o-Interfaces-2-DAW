@@ -1,0 +1,110 @@
+@font-face {
+    font-family: Pixel;
+    src: url('PixelifySans-Regular.woff2') format('woff2'),
+         url('PixelifySans-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-principal: hsl(207 91% 64%);
+    --color-fondo-web: hsl(201 51% 84%);
+    --color-navbar: color-mix(in hsl, var(--color-principal) 50%, var(--color-fondo-web) 50%);
+    --color-fuenteNegra: hsl(0 0 0);
+}
+
+body {
+    font-family: 'Pixel', sans-serif;
+    color: var(--color-fuenteNegra);
+    background-color: #c1dceb;
+    margin: 0;
+    display: flex;            
+    flex-direction: column;   
+    min-height: 100vh;        
+}
+
+header {
+    background-color: var(--color-principal);
+    text-align: center;
+    font-size: 30px;
+    color: var(--color-fuenteNegra);
+    padding: 2%;
+}
+
+h1 {
+    font-size: 20px;
+    color: #444444;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-fuenteNegra);
+}
+
+a:hover {
+    color: var(--color-fuenteNegra);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 1.5%;
+    margin: 0;
+    background-color: var(--color-navbar);
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0 30px;
+}
+
+main {
+    flex-grow: 1;                 
+    text-align: center;
+}
+
+.contenedor {
+    display: flex;      
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 5rem;          
+}
+
+section {
+    flex: 1;     
+    max-width: 470px;  
+    min-width: 350px;  
+    border: solid var(--color-principal) 9px;
+    border-radius: 55px;
+    padding: 20px;
+    box-sizing: border-box;
+    height: fit-content;
+}
+
+section h2 {
+    font-size: 19px;
+}
+
+section p {
+    font-size: 18px;
+}
+
+footer {
+    background-color: var(--color-principal);
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+p {
+    color: hsl(0, 0%, 0%);
+}
+
+
+@media (width <= 1050px) {
+    .contenedor {
+        flex-direction: column; 
+        gap: 40px;
+    }
+}
