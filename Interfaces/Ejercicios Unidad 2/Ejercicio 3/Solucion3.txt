@@ -1,0 +1,94 @@
+For <p id="mission">
+        List all rules that apply to its color.
+        What is the final color, and why?
+body{
+        color: #333;
+}
+p {
+    color: black
+}
+#about p:last-child {
+    color: green;
+}
+.text {
+    font-size: 1.125rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+#mission {
+    color: darkorange;
+}
+Este P se queda de color naranja debido a que es la que más especifidad tiene debido al ID.
+
+For <p id="team">
+        List all rules that apply to its color.
+        What is the final color, and why?
+body{
+        color: #333;
+}
+p {
+    color: black
+}
+#about p:last-child {
+    color: green;
+}
+.text {
+    font-size: 1.125rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+<p id="team" class="text" style="color: darkblue;">
+En este caso, se queda de color azul debido a que el estilo en línea tiene una prioriddad más alta que el estilo que está cogiendo del archivo css que está fuera.
+
+For <p id="experience">
+        List all rules that apply to its color.
+        What is the final color, and why?
+body{
+        color: #333;
+}
+p {
+    color: black
+}
+#about p:last-child {
+    color: green;
+}
+.text {
+    font-size: 1.125rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+#experience {
+    color: darkgray;
+}
+En este caso, este p se queda de color verde, porque hay un conflicto, hay dos # que le indican qué color debe escoger el de id=#about y el suyo de #experiencie.
+¿Qué pasa entonces? Pues que el #about, está indicando exclusivamente que el último hijo, que en este caso es #experiencie, sea verde, como esa regla tiene más especifidad, coge ese color.
+
+
+For <p id="services-intro">
+        List all rules that apply to its color.
+        What is the final color, and why?
+body{
+        color: #333;
+}
+p {
+    color: black
+}
+.intro {
+    color: blue;
+}
+Coge el color azul ya que la regla de color más específica que tiene, es la de .intro y es la que más peso tiene.
+
+For <p id="offer">
+        List all rules that apply to its color.
+        What is the final color, and why?
+        <p id="offer" class="text" style="color: darkblue;">
+body{
+        color: #333;
+}
+p {
+    color: black
+}
+#offer {
+    color: darkgreen !important;
+}
+Este coge el color verde, debido al !important (Cosa que es mala práctica) y lo que le indica es que esa regla tenga preferencia sobre cualquier otra, en caso de que hubiera un conflicto con dos !importants, volvería a calcular cuál tiene más especificación.
